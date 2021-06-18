@@ -27,6 +27,8 @@ class VideoPlayer : RComponent<VideoPlayerProps, RState>() {
                 position = Position.absolute
                 top = 10.px
                 right = 10.px
+                overflow = Overflow.hidden
+                width = LinearDimension.auto
             }
             h3 {
                 +"${props.video.speaker}: ${props.video.title}"

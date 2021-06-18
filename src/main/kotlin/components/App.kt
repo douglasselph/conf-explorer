@@ -1,15 +1,26 @@
 package components
 
-import data.KotlinVideo
 import data.Video
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import kotlinx.css.Float
+import kotlinx.css.LinearDimension
+import kotlinx.css.float
+import kotlinx.css.width
 import react.*
-import react.dom.div
 import react.dom.h1
 import react.dom.h3
+import styled.css
+import styled.styledDiv
 import util.fetchVideos
 
+/**
+ * Dynamic state for the App. Store variable information here.
+ *
+ * @property currentVideo Video?
+ * @property unwatchedVideos List<Video>
+ * @property watchedVideos List<Video>
+ */
 external interface AppState : RState {
     var currentVideo: Video?
     var unwatchedVideos: List<Video>
@@ -26,6 +37,9 @@ class App : RComponent<RProps, AppState>() {
         val mainScope = MainScope()
         mainScope.launch {
             val videos = fetchVideos()
+            /**
+             * State should even only be modifed from within setState:
+             */
             setState {
                 unwatchedVideos = videos
             }
@@ -45,10 +59,16 @@ class App : RComponent<RProps, AppState>() {
         h1 {
             +"KotlinConf Explorer v0.13"
         }
-        div {
+        styledDiv {
+            css {
+                float = Float.left
+            }
             h3 {
                 +"Videos to watch"
             }
+            /**
+             * This method is in VideoPlayer.kt
+             */
             videoList {
                 videos = state.unwatchedVideos
                 selectedVideo = state.currentVideo

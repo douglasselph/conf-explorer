@@ -1,0 +1,40 @@
+{
+  "name": "confexplorer-test",
+  "version": "1.0.0-SNAPSHOT",
+  "main": "kotlin/confexplorer-test.js",
+  "devDependencies": {
+    "karma": "5.2.2",
+    "karma-mocha": "2.0.1",
+    "mocha": "8.1.3",
+    "karma-webpack": "4.0.2",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "source-map-loader": "1.1.0",
+    "karma-sourcemap-loader": "0.3.8",
+    "karma-chrome-launcher": "3.1.0",
+    "css-loader": "4.3.0",
+    "style-loader": "1.2.1"
+  },
+  "dependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "styled-components": "~5.2.1",
+    "react-youtube-lite": "1.0.1",
+    "react-share": "~4.2.1",
+    "confexplorer": "1.0.0-SNAPSHOT",
+    "kotlin": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin/1.4.31",
+    "kotlin-wrappers-kotlin-react-jsLegacy": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-wrappers-kotlin-react-jsLegacy/1.0.0-SNAPSHOT",
+    "kotlin-wrappers-kotlin-extensions-jsLegacy": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-wrappers-kotlin-extensions-jsLegacy/1.0.1-pre.148-kotlin-1.4.21",
+    "kotlinx-coroutines-core": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlinx-coroutines-core/1.4.3",
+    "kotlinx-atomicfu": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlinx-atomicfu/0.15.1",
+    "kotlin-wrappers-kotlin-react-dom-jsLegacy": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-wrappers-kotlin-react-dom-jsLegacy/1.0.0-SNAPSHOT",
+    "kotlinx-html-js": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlinx-html-js/0.7.2",
+    "kotlin-wrappers-kotlin-styled-jsLegacy": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-wrappers-kotlin-styled-jsLegacy/1.0.0-SNAPSHOT",
+    "kotlin-css": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-css/1.0.0-pre.148-kotlin-1.4.21",
+    "kotlin-test-js-runner": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-test-js-runner/1.4.31",
+    "kotlin-test": "file:/home/dug/kreash/web/conf-explorer/build/js/packages_imported/kotlin-test/1.4.31"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

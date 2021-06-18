@@ -1,0 +1,78 @@
+
+Author: Douglas Selph
+Date: Jun 18, 2021
+
+------------------------
+ORGANIZATIONAL STRUCTURE
+------------------------
+
+The top level HTML can be found and edited here:
+
+	src/main/resources/index.html
+
+When published it will be placed here:
+
+	docs/index.html
+
+This html only job is to run a java script file located here:
+
+	docs/confexplorer.js
+	
+This file is a generated file from the sources located in:
+
+	src/main/kotlin
+
+The top level in this directory is:
+	
+	Main.kt
+
+This in turn starts up the top level:
+
+	components/App.kt
+
+It does this by because in index.html there is a div id called "root". In Main.kt it grabs this element
+and then "renders" it with the "child" described in App::class.
+
+-----
+SETUP
+-----
+
+One time setup at the top level:
+
+	gradle wrapper
+
+-------
+RUNNING
+-------
+
+The following will show a browser window:
+
+	./gradlew run
+
+This will cause it to immediately update as soon as any changes are done:
+
+	./gradlew run --continuous
+
+
+-------
+SOURCES
+-------
+
+Within App.kt yuou will see an "init()" function and a "render()" function.
+
+Within the render() function you will see a mix of regular kotlin code and specialized
+HTML generating code such as "h1".
+
+To adjust the styling of elements there is a "css" function. See VideoPlayer.kt for an example.
+
+
+---------
+DEPLOYING
+---------
+
+./gradlew build
+
+git add -A
+git commit -m 'some changes'
+git push heroku master
+

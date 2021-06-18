@@ -5,6 +5,13 @@ import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.p
 
+/**
+ * Properties is the way arguments are passed around to HTML rendering functions.
+ *
+ * @property videos List<Video>
+ * @property selectedVideo Video?
+ * @property onSelectVideo Function1<Video, Unit> : Communicates with caller using this.
+ */
 external interface VideoListProps: RProps {
     var videos: List<Video>
     var selectedVideo: Video?
