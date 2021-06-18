@@ -99,3 +99,7 @@ Did this one time:
 	heroku buildpacks:set heroku/gradle
 	heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
 
+New updates:
+
+	git push heroku main
+
