@@ -1,5 +1,5 @@
 let config = {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     modules: [
       "node_modules"
@@ -13,7 +13,7 @@ let config = {
 
 // entry
 config.entry = {
-    main: ["/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce-dev/confexplorer.js"]
+    main: ["/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce/confexplorer.js"]
 };
 
 config.output = {
@@ -29,7 +29,7 @@ config.output = {
 };
 
 // resolve modules
-config.resolve.modules.unshift("/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce-dev")
+config.resolve.modules.unshift("/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce")
 
 // source maps
 config.module.rules.push({
@@ -37,23 +37,25 @@ config.module.rules.push({
         use: ["source-map-loader"],
         enforce: "pre"
 });
-config.devtool = 'eval-source-map';
+config.devtool = 'source-map';
 config.stats = config.stats || {}
 Object.assign(config.stats, config.stats, {
     warningsFilter: [/Failed to parse source map/]
 })
 
-// dev server
-config.devServer = {
-  "inline": true,
-  "lazy": false,
-  "noInfo": true,
-  "open": true,
-  "overlay": false,
-  "contentBase": [
-    "/home/dug/kreash/web/conf-explorer/build/processedResources/js/main"
-  ]
-};
+// Report progress to console
+// noinspection JSUnnecessarySemicolon
+;(function(config) {
+    const webpack = require('webpack');
+    const handler = (percentage, message, ...args) => {
+        const p = percentage * 100;
+        let msg = `${Math.trunc(p / 10)}${Math.trunc(p % 10)}% ${message} ${args.join(' ')}`;
+        msg = msg.replace(new RegExp("/home/dug/kreash/web/conf-explorer/build/js", 'g'), '');;
+        console.log(msg);
+    };
+
+    config.plugins.push(new webpack.ProgressPlugin(handler))
+})(config);
 
 // css settings
 ;(function(config) {

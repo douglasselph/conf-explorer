@@ -1,12 +1,20 @@
 {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     modules: [
-      '/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce-dev',
+      '/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce',
       'node_modules'
     ]
   },
   plugins: [
+    ProgressPlugin {
+      profile: false,
+      handler: [Function: handler],
+      modulesCount: 500,
+      showEntries: false,
+      showModules: true,
+      showActiveModules: true
+    },
     TeamCityErrorPlugin {}
   ],
   module: {
@@ -35,7 +43,7 @@
   },
   entry: {
     main: [
-      '/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce-dev/confexplorer.js'
+      '/home/dug/kreash/web/conf-explorer/build/js/packages/confexplorer/kotlin-dce/confexplorer.js'
     ]
   },
   output: {
@@ -45,22 +53,12 @@
     libraryTarget: 'umd',
     globalObject: 'this'
   },
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   stats: {
     warningsFilter: [
       /Failed to parse source map/
     ],
     warnings: false,
     errors: false
-  },
-  devServer: {
-    inline: true,
-    lazy: false,
-    noInfo: true,
-    open: true,
-    overlay: false,
-    contentBase: [
-      '/home/dug/kreash/web/conf-explorer/build/processedResources/js/main'
-    ]
   }
 }
