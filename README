@@ -82,16 +82,17 @@ BUILD:
 
 TO GITHUB:
 
-cp build/distributions ../douglasselph.github.io
-cd ../douglasselph.github.io
-git add .
-git push
+	cp build/distributions ../douglasselph.github.io
+	cd ../douglasselph.github.io
+	git add .
+	git push
 
-Then go to https://douglasselph.github.io
+Then go to:
+
+	 https://douglasselph.github.io
 
 TO HEROKU:
 
-https://enigmatic-shore-83442.herokuapp.com/
 
 Did this one time:
 
@@ -102,4 +103,9 @@ Did this one time:
 New updates:
 
 	git push heroku main
+
+Then got to:
+
+  	https://dry-woodland-67925.herokuapp.com/
+
 

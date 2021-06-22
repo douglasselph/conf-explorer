@@ -181,6 +181,15 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
+          <root url="file://$MODULE_DIR$/../../build/js/node_modules/bootstrap/dist/js/bootstrap.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
           <root url="file://$MODULE_DIR$/../../build/js/packages/confexplorer/kotlin" />
         </CLASSES>
         <JAVADOC />
