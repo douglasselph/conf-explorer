@@ -23,11 +23,10 @@
 hs_err_pid*
 
 build
+.idea
+.gradle
 
 *.swp
 
 !gradle/wrapper/gradle-wrapper.jar
 
-.idea
-
-.gradle
